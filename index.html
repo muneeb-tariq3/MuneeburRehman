@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Muneeb Tariq — Web Developer & Frontend Engineer based in Pakistan. Building fast, responsive web applications.">
+  <meta name="theme-color" content="#080c14">
+  <title>Muneeb Tariq — Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* HOME PAGE STYLES */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%);
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%);
+    }
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-orb-1 {
+      width: 600px; height: 600px;
+      top: -200px; right: -100px;
+      background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+    }
+    .hero-orb-2 {
+      width: 400px; height: 400px;
+      bottom: -100px; left: -100px;
+      background: radial-gradient(circle, rgba(255,92,92,0.07) 0%, transparent 70%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--cyan);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow-line {
+      width: 40px; height: 1px;
+      background: var(--cyan);
+    }
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero-title .name { color: var(--cyan); display: block; }
+    .hero-title .role {
+      color: var(--text-muted);
+      font-size: 0.55em;
+      font-weight: 400;
+      letter-spacing: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      height: 0.85em;
+      background: var(--cyan);
+      margin-left: 3px;
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 36px;
+      line-height: 1.75;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-stat-num {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cyan);
+    }
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .scroll-cue {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      animation: bob 2.5s ease-in-out infinite;
+    }
+    @keyframes bob { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-8px); } }
+    .scroll-cue svg { animation: fadeDown 1.5s ease-in-out infinite; opacity: 0.6; }
+    @keyframes fadeDown { 0%,100% { transform: translateY(0); opacity: 0.6; } 50% { transform: translateY(4px); opacity: 1; } }
+
+    /* FEATURED SECTION */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .feat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .feat-card:hover { border-color: rgba(0,229,255,0.35); transform: translateY(-5px); box-shadow: var(--shadow); }
+    .feat-card-icon {
+      width: 44px; height: 44px;
+      background: var(--cyan-dim);
+      border: 1px solid rgba(0,229,255,0.25);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      color: var(--cyan);
+    }
+    .feat-card h3 {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .feat-card p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .feat-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: var(--transition);
+    }
+    .feat-card-link:hover { gap: 10px; }
+
+    /* TECH STRIP */
+    .tech-strip {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .tech-strip-inner {
+      display: flex;
+      gap: 32px;
+      animation: slide 20s linear infinite;
+      white-space: nowrap;
+    }
+    @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .tech-strip-item {
+      font-family: var(--font-head);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .tech-strip-item::after {
+      content: '◆';
+      color: var(--cyan);
+      font-size: 0.5rem;
+    }
+
+    @media(max-width:768px){
+      .featured-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+    }
+    @media(max-width:480px){
+      .hero-stats { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ====== NAVBAR ====== -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      Muneeb<span>Tariq</span>
+      <span class="nav-logo-dot" aria-hidden="true"></span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</nav>
+
+<!-- ====== HERO ====== -->
+<main>
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow fade-up">
+        <span class="hero-eyebrow-line"></span>
+        Available for Projects
+      </div>
+
+      <h1 class="hero-title fade-up delay-1">
+        <span class="name">Muneeb Tariq</span>
+        <span class="role">
+          <span id="typed"></span><span class="cursor" aria-hidden="true"></span>
+        </span>
+      </h1>
+
+      <p class="hero-desc fade-up delay-2">
+        Crafting high-performance, visually compelling web experiences. Specializing in Vue.js, React & Python backends — turning ideas into polished, deployable products.
+      </p>
+
+      <div class="hero-actions fade-up delay-3">
+        <a href="projects.html" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          View Projects
+        </a>
+        <a href="contact.html" class="btn btn-outline">Get In Touch →</a>
+      </div>
+
+      <div class="hero-stats fade-up delay-4">
+        <div>
+          <div class="hero-stat-num">3+</div>
+          <div class="hero-stat-label">Projects Built</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">6+</div>
+          <div class="hero-stat-label">Technologies</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Commitment</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">PKT</div>
+          <div class="hero-stat-label">Based in Pakistan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    Scroll
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+<!-- ====== TECH STRIP ====== -->
+<div class="tech-strip" aria-label="Technology stack">
+  <div class="tech-strip-inner" aria-hidden="true">
+    <span class="tech-strip-item">HTML5</span>
+    <span class="tech-strip-item">CSS3</span>
+    <span class="tech-strip-item">JavaScript</span>
+    <span class="tech-strip-item">Vue.js</span>
+    <span class="tech-strip-item">React.js</span>
+    <span class="tech-strip-item">TypeScript</span>
+    <span class="tech-strip-item">Python</span>
+    <span class="tech-strip-item">Bootstrap 5</span>
+    <span class="tech-strip-item">TailwindCSS</span>
+    <span class="tech-strip-item">MySQL</span>
+    <span class="tech-strip-item">Git / GitHub</span>
+    <span class="tech-strip-item">Linux CLI</span>
+    <!-- duplicate for seamless loop -->
+    <span class="tech-strip-item">HTML5</span>
+    <span class="tech-strip-item">CSS3</span>
+    <span class="tech-strip-item">JavaScript</span>
+    <span class="tech-strip-item">Vue.js</span>
+    <span class="tech-strip-item">React.js</span>
+    <span class="tech-strip-item">TypeScript</span>
+    <span class="tech-strip-item">Python</span>
+    <span class="tech-strip-item">Bootstrap 5</span>
+    <span class="tech-strip-item">TailwindCSS</span>
+    <span class="tech-strip-item">MySQL</span>
+    <span class="tech-strip-item">Git / GitHub</span>
+    <span class="tech-strip-item">Linux CLI</span>
+  </div>
+</div>
+
+<!-- ====== FEATURED ====== -->
+<section class="section">
+  <div class="container">
+    <p class="section-tag observe">What I Bring</p>
+    <h2 class="section-title observe" style="margin-bottom:48px">
+      Built for <span>Performance</span><br>& Real-World Use
+    </h2>
+    <div class="featured-grid">
+      <div class="feat-card observe">
+        <div class="feat-card-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Frontend Excellence</h3>
+        <p>Pixel-perfect, responsive interfaces using Vue.js, React, TailwindCSS and Bootstrap — delivering fluid UX across all devices.</p>
+        <a href="skills.html" class="feat-card-link">See Skills <span>→</span></a>
+      </div>
+      <div class="feat-card observe">
+        <div class="feat-card-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <h3>Backend & Database</h3>
+        <p>Python backends, PHP development, MySQL/PostgreSQL databases — architecting complete full-stack solutions from scratch to deployment.</p>
+        <a href="projects.html" class="feat-card-link">See Projects <span>→</span></a>
+      </div>
+      <div class="feat-card observe">
+        <div class="feat-card-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        </div>
+        <h3>Full Deployment</h3>
+        <p>End-to-end deployment on GitHub Pages, Netlify and cloud platforms. Version control, CI/CD and Linux server management included.</p>
+        <a href="contact.html" class="feat-card-link">Work Together <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="card observe" style="text-align:center;padding:56px 32px;background:linear-gradient(135deg,var(--surface) 0%,var(--bg2) 100%)">
+      <p class="section-tag" style="justify-content:center">Let's Build</p>
+      <h2 class="section-title" style="margin-bottom:20px">Have a Project in Mind?</h2>
+      <p style="color:var(--text-muted);max-width:440px;margin:0 auto 32px;font-size:1rem">I'm open to freelance projects, collaborations and full-time opportunities. Let's talk.</p>
+      <a href="contact.html" class="btn btn-primary" style="font-size:0.9rem">Start a Conversation →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Muneeb<span>Tariq</span></a>
+        <p>Web developer building responsive, high-performance digital experiences. Based in Pakistan, available worldwide.</p>
+        <a href="contact.html#download-cv" class="btn btn-coral" style="margin-top:20px;font-size:0.78rem">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html"><span class="arrow">→</span> Home</a></li>
+          <li><a href="about.html"><span class="arrow">→</span> About</a></li>
+          <li><a href="projects.html"><span class="arrow">→</span> Projects</a></li>
+          <li><a href="skills.html"><span class="arrow">→</span> Skills</a></li>
+          <li><a href="contact.html"><span class="arrow">→</span> Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:muneebtariq841@gmail.com" style="color:var(--text-muted);font-size:0.83rem">muneebtariq841@gmail.com</a>
+        </div>
+        <div class="footer-email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Pakistan</span>
+        </div>
+        <div class="footer-email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.13 6.13l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>+92 300 6657269</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="yr"></span> <span>Muneeb Tariq</span>. Built with precision & passion.</p>
+      <p>Open to <span>opportunities</span> — let's connect.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
