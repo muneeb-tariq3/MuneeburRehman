@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Obsidian Engineering - Mission</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "on-surface": "#dae2fd",
+                      "inverse-surface": "#dae2fd",
+                      "outline": "#908fa0",
+                      "surface-tint": "#c0c1ff",
+                      "surface-container-high": "#222a3d",
+                      "surface-container-low": "#131b2e",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "outline-variant": "#464554",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-fixed": "#07006c",
+                      "on-tertiary-fixed": "#301400",
+                      "on-tertiary-container": "#452000",
+                      "on-primary-container": "#0d0096",
+                      "on-primary": "#1000a9",
+                      "on-background": "#dae2fd",
+                      "inverse-on-surface": "#283044",
+                      "surface-container": "#171f33",
+                      "background": "#0b1326",
+                      "on-secondary-container": "#00424e",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "primary": "#c0c1ff",
+                      "secondary-container": "#03b5d3",
+                      "on-error": "#690005",
+                      "tertiary-fixed-dim": "#ffb783",
+                      "secondary-fixed": "#acedff",
+                      "surface-variant": "#2d3449",
+                      "tertiary-container": "#d97721",
+                      "surface-container-lowest": "#060e20",
+                      "inverse-primary": "#494bd6",
+                      "primary-container": "#8083ff",
+                      "surface-bright": "#31394d",
+                      "on-tertiary": "#4f2500",
+                      "error": "#ffb4ab",
+                      "tertiary-fixed": "#ffdcc5",
+                      "tertiary": "#ffb783",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "surface": "#0b1326",
+                      "surface-container-highest": "#2d3449",
+                      "surface-dim": "#0b1326",
+                      "secondary": "#4cd7f6",
+                      "error-container": "#93000a",
+                      "on-secondary": "#003640",
+                      "primary-fixed": "#e1e0ff",
+                      "on-tertiary-fixed-variant": "#703700",
+                      "on-surface-variant": "#c7c4d7",
+                      "on-secondary-fixed": "#001f26"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "stack-md": "24px",
+                      "stack-lg": "48px",
+                      "margin-desktop": "40px",
+                      "container-max": "1200px",
+                      "unit": "8px",
+                      "stack-sm": "12px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "mono-code": [
+                              "JetBrains Mono"
+                      ],
+                      "mono-label": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "display-lg": [
+                              "Geist"
+                      ],
+                      "body-base": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "mono-code": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-label": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-base": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-16">
+<!-- Top Navigation Shell -->
+<nav class="bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 fixed top-0 w-full z-50 transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">
+                Obsidian Engineering
+            </div>
+<!-- Mobile Menu Toggle (Simplified for Mobile View) -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Desktop Links (Hidden on Mobile as per prompt focusing on mobile, but keeping semantic structure) -->
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-base text-body-base" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-base text-body-base" href="#">Workflow</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-base text-body-base" href="#">Mission</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-base text-body-base" href="#">Stack</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-base text-body-base" href="#">Blog</a>
+<div class="flex gap-4 items-center ml-4">
+<button class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">terminal</span>
+</button>
+<button class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">code</span>
+</button>
+<button class="bg-primary text-on-primary font-mono-label text-mono-label px-4 py-2 rounded">
+                        Connect
+                    </button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow px-margin-mobile flex flex-col gap-stack-lg py-stack-lg max-w-3xl mx-auto w-full">
+<!-- Header -->
+<header class="flex flex-col gap-unit">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface">Engineering Narrative</h1>
+<p class="font-body-base text-body-base text-on-surface-variant opacity-80">Building resilient systems through rigorous methodologies.</p>
+</header>
+<!-- Mission Quote -->
+<section class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-stack-md relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<span class="material-symbols-outlined text-primary/20 absolute -top-2 -left-2 text-6xl">format_quote</span>
+<blockquote class="relative z-10 font-headline-md text-headline-md text-on-surface leading-tight">
+                "Our mission is to architect digital foundations that not only withstand load, but scale elegantly with ambition."
+            </blockquote>
+</section>
+<!-- Philosophy Terminal -->
+<section class="flex flex-col gap-stack-sm">
+<h2 class="font-mono-label text-mono-label text-primary uppercase tracking-widest">Philosophy</h2>
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded flex flex-col h-64 shadow-lg shadow-black/20">
+<div class="flex items-center gap-2 px-4 py-2 border-b border-outline-variant/30 bg-surface-container-high/50">
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+<span class="font-mono-label text-[10px] text-on-surface-variant ml-2 opacity-50">sh - philosophy.sh</span>
+</div>
+<div class="p-4 overflow-y-auto font-mono-code text-mono-code text-on-surface-variant flex-grow scrollbar-hide">
+<div class="mb-2"><span class="text-primary">obsidian@sys:~$</span> cat core_principles.md</div>
+<ul class="list-none space-y-3 pl-2 border-l border-outline-variant/20 ml-2">
+<li><span class="text-secondary"># 01. Structural Integrity First</span><br/> We prioritize robust architecture over rapid, fragile feature deployment.</li>
+<li><span class="text-secondary"># 02. Minimalist Efficiency</span><br/> Complexity is a liability. We strip away the unnecessary to reveal clear, maintainable paths.</li>
+<li><span class="text-secondary"># 03. Transparent Operations</span><br/> Observability is built-in, never bolted on. Systems must explain themselves.</li>
+<li><span class="text-secondary"># 04. Continuous Refinement</span><br/> The stack is a living entity; it requires constant tuning and iterative improvement.</li>
+</ul>
+<div class="mt-4 animate-pulse">_</div>
+</div>
+</div>
+</section>
+<!-- Workflow Timeline -->
+<section class="flex flex-col gap-stack-sm">
+<h2 class="font-mono-label text-mono-label text-primary uppercase tracking-widest">9-Step Workflow</h2>
+<div class="relative pl-6 border-l border-outline-variant/20 flex flex-col gap-6">
+<!-- Step 1 -->
+<div class="relative">
+<div class="absolute w-3 h-3 bg-background border-2 border-primary rounded-full -left-[1.65rem] top-1.5"></div>
+<h3 class="font-body-base text-body-base font-semibold text-on-surface mb-1">01. Discovery &amp; Audit</h3>
+<p class="font-body-base text-sm text-on-surface-variant opacity-80">Mapping the existing topology and identifying critical constraints.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<div class="absolute w-3 h-3 bg-background border-2 border-primary/50 rounded-full -left-[1.65rem] top-1.5"></div>
+<h3 class="font-body-base text-body-base font-semibold text-on-surface mb-1">02. Architecture Design</h3>
+<p class="font-body-base text-sm text-on-surface-variant opacity-80">Drafting the structural blueprint for high availability and scale.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<div class="absolute w-3 h-3 bg-background border-2 border-primary/50 rounded-full -left-[1.65rem] top-1.5"></div>
+<h3 class="font-body-base text-body-base font-semibold text-on-surface mb-1">03. Stack Selection</h3>
+<p class="font-body-base text-sm text-on-surface-variant opacity-80">Choosing the precise tools to execute the architecture flawlessly.</p>
+</div>
+<!-- Truncated steps for visual brevity -->
+<div class="relative">
+<div class="absolute w-3 h-3 bg-background border-2 border-outline-variant rounded-full -left-[1.65rem] top-1.5"></div>
+<h3 class="font-body-base text-body-base font-semibold text-outline-variant mb-1">... 6 More Steps</h3>
+</div>
+</div>
+</section>
+<!-- Current Focus Card -->
+<section class="mt-stack-sm">
+<div class="bg-surface-container-high border border-outline-variant/40 rounded-lg p-6 relative overflow-hidden backdrop-blur-md">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+<div class="flex items-center gap-3 mb-4">
+<div class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</div>
+<h2 class="font-mono-label text-mono-label text-secondary uppercase tracking-widest">Current Focus</h2>
+</div>
+<p class="font-body-base text-body-base text-on-surface mb-4">
+                    Optimizing Kubernetes cluster deployments for extreme low-latency financial tech applications while migrating legacy monoliths to event-driven microservices.
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/40 text-on-surface font-mono-label text-mono-label px-2 py-1 rounded">Kubernetes</span>
+<span class="bg-surface-variant/40 text-on-surface font-mono-label text-mono-label px-2 py-1 rounded">Go</span>
+<span class="bg-surface-variant/40 text-on-surface font-mono-label text-mono-label px-2 py-1 rounded">Kafka</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 w-full py-stack-lg mt-stack-lg">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto gap-stack-sm">
+<div class="font-headline-md text-headline-md text-on-surface text-center md:text-left">
+                Obsidian Engineering
+            </div>
+<div class="flex flex-wrap justify-center gap-4 my-4 md:my-0">
+<a class="font-mono-label text-mono-label text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Documentation</a>
+<a class="font-mono-label text-mono-label text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Architecture</a>
+<a class="font-mono-label text-mono-label text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="font-mono-label text-mono-label text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+</div>
+<div class="font-mono-label text-mono-label text-on-surface-variant opacity-60 text-center">
+                © 2024 Obsidian Engineering. Built for structural integrity.
+            </div>
+</div>
+</footer>
+<style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

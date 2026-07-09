@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Muneeb - Technical Skills</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-surface-variant": "#c7c4d7",
+                        "surface-tint": "#c0c1ff",
+                        "surface-container-lowest": "#060e20",
+                        "secondary-container": "#03b5d3",
+                        "outline-variant": "#464554",
+                        "on-primary": "#1000a9",
+                        "on-secondary-container": "#00424e",
+                        "on-surface": "#dae2fd",
+                        "on-error": "#690005",
+                        "primary-container": "#8083ff",
+                        "surface-bright": "#31394d",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "tertiary-fixed": "#ffdcc5",
+                        "on-background": "#dae2fd",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-container-low": "#131b2e",
+                        "secondary": "#4cd7f6",
+                        "surface-dim": "#0b1326",
+                        "primary": "#c0c1ff",
+                        "on-tertiary": "#4f2500",
+                        "on-primary-fixed": "#07006c",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#494bd6",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "error-container": "#93000a",
+                        "outline": "#908fa0",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-primary-container": "#0d0096",
+                        "background": "#0b1326",
+                        "on-tertiary-fixed": "#301400",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-secondary": "#003640",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#283044",
+                        "tertiary": "#ffb783",
+                        "inverse-surface": "#dae2fd",
+                        "surface": "#0b1326",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-highest": "#2d3449",
+                        "secondary-fixed": "#acedff",
+                        "on-secondary-fixed": "#001f26",
+                        "tertiary-container": "#d97721",
+                        "surface-variant": "#2d3449",
+                        "surface-container": "#171f33",
+                        "on-tertiary-container": "#452000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "margin-mobile": "20px",
+                        "stack-md": "24px",
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "stack-lg": "48px",
+                        "gutter": "24px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "mono-code": ["JetBrains Mono"],
+                        "mono-label": ["JetBrains Mono"],
+                        "display-lg": ["Geist"],
+                        "body-base": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "mono-code": ["14px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "mono-label": ["13px", { "lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "body-base": ["16px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(19, 27, 46, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(192, 193, 255, 0.1);
+        }
+        .glass-card:hover {
+            border-color: rgba(192, 193, 255, 0.3);
+            background: rgba(34, 42, 61, 0.5);
+        }
+        
+        .chip {
+            background: rgba(45, 52, 73, 0.4);
+        }
+        
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #4cd7f6;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 0 rgba(76, 215, 246, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(76, 215, 246, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(76, 215, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(76, 215, 246, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-base text-body-base antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- Top Navigation (Desktop) -->
+<nav class="hidden md:flex justify-between items-center px-margin-desktop max-w-container-max mx-auto h-20 z-50 fixed top-0 w-full bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Muneeb</div>
+<ul class="flex gap-stack-md items-center font-mono-label text-mono-label">
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container-high/50 px-3 py-2 rounded-DEFAULT duration-300 active:scale-95 duration-150" href="#">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container-high/50 px-3 py-2 rounded-DEFAULT duration-300 active:scale-95 duration-150" href="#">About</a></li>
+<li><a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 duration-150" href="#">Skills</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container-high/50 px-3 py-2 rounded-DEFAULT duration-300 active:scale-95 duration-150" href="#">Projects</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container-high/50 px-3 py-2 rounded-DEFAULT duration-300 active:scale-95 duration-150" href="#">Education</a></li>
+<li><a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container-high/50 px-3 py-2 rounded-DEFAULT duration-300 active:scale-95 duration-150" href="#">Contact</a></li>
+</ul>
+<button class="bg-primary text-on-primary font-mono-label text-mono-label px-4 py-2 rounded-DEFAULT hover:bg-primary-fixed transition-colors active:scale-95 duration-150">Resume</button>
+</nav>
+<!-- Side Navigation (Suppressed for this layout in favor of Top/Bottom nav as per hierarchy rules and spatial constraints) -->
+<!-- Main Content Area -->
+<main class="flex-grow pt-24 md:pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<header class="mb-stack-lg flex flex-col gap-stack-sm pt-8 md:pt-16">
+<div class="flex items-center gap-2 mb-2">
+<span class="pulse-dot"></span>
+<span class="font-mono-label text-mono-label text-secondary">SYSTEMS ONLINE</span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface max-w-3xl leading-tight">
+                Technical Arsenal
+            </h1>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-2xl mt-4 border-l-2 border-primary pl-4">
+                Architecting scalable, resilient systems from the database to the deployment pipeline. Precision-engineered solutions for complex infrastructural challenges.
+            </p>
+</header>
+<!-- Categorized Tech Stack (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-stack-lg">
+<!-- Frontend Card -->
+<div class="glass-card rounded-xl p-stack-md flex flex-col gap-stack-md transition-all duration-300 group">
+<div class="flex items-center gap-3 pb-stack-sm border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">desktop_windows</span>
+<h2 class="font-headline-md text-headline-md text-on-surface text-xl">Frontend Engineering</h2>
+</div>
+<div class="flex flex-wrap gap-unit">
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">React</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Next.js</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">TypeScript</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Tailwind CSS</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Zustand</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Framer Motion</span>
+</div>
+</div>
+<!-- Backend Card -->
+<div class="glass-card rounded-xl p-stack-md flex flex-col gap-stack-md transition-all duration-300 group">
+<div class="flex items-center gap-3 pb-stack-sm border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">dns</span>
+<h2 class="font-headline-md text-headline-md text-on-surface text-xl">Backend Architecture</h2>
+</div>
+<div class="flex flex-wrap gap-unit">
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Node.js</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Go</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Rust</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">PostgreSQL</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Redis</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">gRPC</span>
+</div>
+</div>
+<!-- Infrastructure Card -->
+<div class="glass-card rounded-xl p-stack-md flex flex-col gap-stack-md transition-all duration-300 group">
+<div class="flex items-center gap-3 pb-stack-sm border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">cloud</span>
+<h2 class="font-headline-md text-headline-md text-on-surface text-xl">Infrastructure &amp; DevOps</h2>
+</div>
+<div class="flex flex-wrap gap-unit">
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Kubernetes</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Terraform</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">AWS</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Docker</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">GitHub Actions</span>
+<span class="chip font-mono-code text-mono-code text-on-surface px-3 py-1 rounded-DEFAULT">Prometheus</span>
+</div>
+</div>
+</section>
+<!-- Professional Services Section -->
+<section class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Professional Capabilities</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="glass-card rounded-xl p-stack-md border-l-4 border-l-primary flex flex-col gap-2">
+<h3 class="font-mono-label text-mono-label text-primary">01 // Full-Stack Development</h3>
+<p class="font-body-base text-body-base text-on-surface-variant mt-2">
+                        End-to-end product development focusing on performant user interfaces backed by robust, scalable microservices architectures.
+                    </p>
+</div>
+<div class="glass-card rounded-xl p-stack-md border-l-4 border-l-secondary flex flex-col gap-2">
+<h3 class="font-mono-label text-mono-label text-secondary">02 // DevOps Engineering</h3>
+<p class="font-body-base text-body-base text-on-surface-variant mt-2">
+                        Streamlining delivery pipelines, configuring container orchestration, and ensuring high availability through infrastructure as code.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Terminal Style Code Snippet -->
+<section class="mt-stack-lg bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-2xl relative group">
+<div class="bg-surface-container-low px-4 py-2 flex items-center gap-2 border-b border-outline-variant/20">
+<div class="w-3 h-3 rounded-full bg-error-container"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary-container"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+<span class="ml-4 font-mono-label text-mono-label text-on-surface-variant text-xs">muneeb@workstation:~/portfolio/skills</span>
+</div>
+<div class="p-stack-md font-mono-code text-mono-code overflow-x-auto relative">
+<button aria-label="Copy code" class="absolute top-4 right-4 bg-surface-variant text-on-surface-variant p-2 rounded-DEFAULT opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-bright">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+<div class="flex">
+<div class="text-outline-variant select-none pr-4 text-right border-r border-outline-variant/20 mr-4">
+                        1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7
+                    </div>
+<div class="text-on-surface">
+<span class="text-inverse-primary">const</span> <span class="text-secondary">engineer</span> = {<br/>
+                          name: <span class="text-tertiary">"Muneeb"</span>,<br/>
+                          role: <span class="text-tertiary">"Senior Software Engineer"</span>,<br/>
+                          focus: [<span class="text-tertiary">"Scalability"</span>, <span class="text-tertiary">"Performance"</span>, <span class="text-tertiary">"Automation"</span>],<br/>
+                          execute: () =&gt; { <br/>
+                            deployToProduction(scale(infrastructure));<br/>
+                          }<br/>
+                        };
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile) -->
+<nav class="md:hidden flex justify-around items-center px-4 py-2 pb-safe fixed bottom-0 w-full z-50 bg-surface-container/90 dark:bg-surface-container/90 backdrop-blur-md border-t border-outline-variant/20 shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-mono-label text-mono-label text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-full p-2 scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">code</span>
+<span class="font-mono-label text-mono-label text-[10px]">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">terminal</span>
+<span class="font-mono-label text-mono-label text-[10px]">Projects</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">school</span>
+<span class="font-mono-label text-mono-label text-[10px]">Education</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">mail</span>
+<span class="font-mono-label text-mono-label text-[10px]">Contact</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-stack-md bg-surface-dim border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-auto mb-16 md:mb-0">
+<div class="font-mono-code text-primary mb-4 md:mb-0">
+            © 2024 Muneeb. Engineered for Performance.
+        </div>
+<div class="flex gap-4 font-mono-label text-mono-label">
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a>
+</div>
+</footer>
+</body></html>

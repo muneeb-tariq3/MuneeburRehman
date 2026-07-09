@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Education &amp; Certifications | MUNEEB</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#171f33",
+                        "tertiary-container": "#d97721",
+                        "secondary-fixed": "#acedff",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-primary": "#1000a9",
+                        "on-primary-container": "#0d0096",
+                        "surface-variant": "#2d3449",
+                        "outline-variant": "#464554",
+                        "primary-fixed": "#e1e0ff",
+                        "primary": "#c0c1ff",
+                        "surface-bright": "#31394d",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "tertiary-fixed": "#ffdcc5",
+                        "on-surface": "#dae2fd",
+                        "on-secondary-fixed": "#001f26",
+                        "on-secondary": "#003640",
+                        "tertiary": "#ffb783",
+                        "surface-container-lowest": "#060e20",
+                        "inverse-on-surface": "#283044",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#0b1326",
+                        "secondary": "#4cd7f6",
+                        "on-primary-fixed": "#07006c",
+                        "surface-tint": "#c0c1ff",
+                        "surface-container-low": "#131b2e",
+                        "on-surface-variant": "#c7c4d7",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "surface-container-highest": "#2d3449",
+                        "on-secondary-container": "#00424e",
+                        "background": "#0b1326",
+                        "on-background": "#dae2fd",
+                        "outline": "#908fa0",
+                        "inverse-surface": "#dae2fd",
+                        "surface": "#0b1326",
+                        "secondary-container": "#03b5d3",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "primary-container": "#8083ff",
+                        "inverse-primary": "#494bd6",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "surface-container-high": "#222a3d",
+                        "on-tertiary-fixed": "#301400",
+                        "on-tertiary-container": "#452000",
+                        "on-tertiary": "#4f2500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "mono-code": ["JetBrains Mono"],
+                        "mono-label": ["JetBrains Mono"],
+                        "headline-md": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "body-base": ["Inter"]
+                    },
+                    "fontSize": {
+                        "mono-code": ["14px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "mono-label": ["13px", {"lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-base": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+        .glass-panel {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hairline-border {
+            border: 1px solid rgba(144, 143, 160, 0.2);
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 5;
+            background: linear-gradient(0deg, rgba(192, 193, 255, 0) 0%, rgba(192, 193, 255, 0.05) 50%, rgba(192, 193, 255, 0) 100%);
+            opacity: 0.1;
+            position: fixed;
+            bottom: 100%;
+            pointer-events: none;
+            animation: scanline 8s linear infinite;
+        }
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(192, 193, 255, 0) 0%, rgba(192, 193, 255, 0.5) 20%, rgba(192, 193, 255, 0.5) 80%, rgba(192, 193, 255, 0) 100%);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-body-base text-body-base overflow-x-hidden selection:bg-primary/30">
+<div class="scanline"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile h-16">
+<div class="font-headline-md text-2xl font-bold text-primary tracking-tighter">MUNEEB.</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-all">dark_mode</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-all" onclick="toggleSidebar()">menu</span>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Mobile Overlay) -->
+<div class="fixed inset-y-0 right-0 w-[85%] z-[60] bg-surface-container-high/95 backdrop-blur-2xl border-l border-outline-variant/50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col p-6 gap-4" id="sideNav">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h2 class="font-headline-md text-xl text-primary">Navigation</h2>
+<p class="font-mono-label text-xs opacity-70">Senior Systems Engineer</p>
+</div>
+<span class="material-symbols-outlined text-on-surface cursor-pointer p-2 bg-surface-variant/30 rounded-full" onclick="toggleSidebar()">close</span>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant flex items-center px-4 py-4 hover:bg-surface-variant/50 rounded-xl font-mono-label text-sm transition-all" href="#"><span class="material-symbols-outlined mr-4">home</span> Home</a>
+<a class="text-on-surface-variant flex items-center px-4 py-4 hover:bg-surface-variant/50 rounded-xl font-mono-label text-sm transition-all" href="#"><span class="material-symbols-outlined mr-4">person</span> About</a>
+<a class="text-on-surface-variant flex items-center px-4 py-4 hover:bg-surface-variant/50 rounded-xl font-mono-label text-sm transition-all" href="#"><span class="material-symbols-outlined mr-4">terminal</span> Skills</a>
+<a class="text-on-surface-variant flex items-center px-4 py-4 hover:bg-surface-variant/50 rounded-xl font-mono-label text-sm transition-all" href="#"><span class="material-symbols-outlined mr-4">code</span> Projects</a>
+<a class="bg-primary-container/20 text-primary border border-primary/30 rounded-xl flex items-center px-4 py-4 font-mono-label text-sm" href="#"><span class="material-symbols-outlined mr-4">school</span> Education</a>
+<a class="text-on-surface-variant flex items-center px-4 py-4 hover:bg-surface-variant/50 rounded-xl font-mono-label text-sm transition-all" href="#"><span class="material-symbols-outlined mr-4">mail</span> Contact</a>
+</div>
+</div>
+<!-- Main Content -->
+<main class="pt-24 pb-20 px-margin-mobile max-w-lg mx-auto">
+<!-- 1. Hero Section -->
+<header class="mb-12 reveal">
+<div class="flex items-center gap-3 mb-4">
+<div class="h-[1px] w-8 bg-primary"></div>
+<span class="font-mono-label text-[10px] uppercase tracking-[0.2em] text-secondary">Credentials &amp; Growth</span>
+</div>
+<h1 class="font-display-lg-mobile text-on-surface leading-[1.1] mb-6">Education &amp; <br/><span class="text-primary">Certifications</span></h1>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+            A structured path of academic excellence and continuous professional evolution in cloud-native technologies and AI systems.
+        </p>
+</header>
+<!-- 2. Academic Education (Vertical Timeline) -->
+<section class="mb-16 reveal">
+<h2 class="font-headline-md text-xl text-on-surface mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">school</span> Academic Journey
+        </h2>
+<div class="relative pl-8 timeline-line space-y-12">
+<!-- Graduation/Future -->
+<div class="relative">
+<div class="absolute -left-[27px] top-1 w-4 h-4 rounded-full border-2 border-primary bg-surface shadow-[0_0_10px_rgba(192,193,255,0.5)]"></div>
+<div class="glass-panel p-5 rounded-xl">
+<span class="font-mono-label text-[10px] text-primary mb-1 block">EST. 2024-2026</span>
+<h3 class="text-lg font-bold text-on-surface">Advanced Systems Specialization</h3>
+<p class="text-sm text-on-surface-variant mt-2">Planned pursuit of professional master's focusing on Large Language Models and Distributed Computing.</p>
+</div>
+</div>
+<!-- Degree -->
+<div class="relative">
+<div class="absolute -left-[27px] top-1 w-4 h-4 rounded-full border-2 border-secondary bg-surface"></div>
+<div class="glass-panel p-5 rounded-xl border-l-4 border-l-secondary">
+<span class="font-mono-label text-[10px] text-secondary mb-1 block">2012-2016</span>
+<h3 class="text-lg font-bold text-on-surface">BS Computer Science</h3>
+<p class="text-sm text-on-surface-variant mt-2">Focused on Software Engineering and Systems Architecture. Graduated with honors (3.92 GPA).</p>
+<div class="flex gap-2 mt-4">
+<span class="text-[10px] bg-surface-variant/50 px-2 py-1 rounded text-outline uppercase font-mono-label">Honors</span>
+<span class="text-[10px] bg-surface-variant/50 px-2 py-1 rounded text-outline uppercase font-mono-label">Merit Scholarship</span>
+</div>
+</div>
+</div>
+<!-- Matriculation -->
+<div class="relative">
+<div class="absolute -left-[27px] top-1 w-4 h-4 rounded-full border-2 border-outline bg-surface"></div>
+<div class="glass-panel p-5 rounded-xl opacity-80">
+<span class="font-mono-label text-[10px] text-outline mb-1 block">Pre-2012</span>
+<h3 class="text-lg font-bold text-on-surface">Matriculation &amp; Inter</h3>
+<p class="text-sm text-on-surface-variant mt-2">Foundational science and mathematics background with top-tier academic performance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Professional Certifications (Responsive Grid) -->
+<section class="mb-16 reveal">
+<div class="flex justify-between items-end mb-8 border-b border-outline-variant/30 pb-4">
+<h2 class="font-headline-md text-xl text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span> Certifications
+            </h2>
+<span class="font-mono-label text-[10px] text-secondary-fixed-dim uppercase">10+ Verified</span>
+</div>
+<div class="space-y-4">
+<!-- Cert Card 1: AI -->
+<div class="glass-panel p-5 rounded-xl hairline-border flex gap-4 items-center">
+<div class="w-12 h-12 flex-shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-bold text-on-surface text-base">AI Fundamentals</h4>
+<p class="text-xs text-on-surface-variant">DeepLearning.AI - 2024</p>
+</div>
+<span class="material-symbols-outlined text-outline text-sm">open_in_new</span>
+</div>
+<!-- Cert Card 2: AWS -->
+<div class="glass-panel p-5 rounded-xl hairline-border flex gap-4 items-center">
+<div class="w-12 h-12 flex-shrink-0 bg-secondary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">cloud</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-bold text-on-surface text-base">AWS Solutions Architect</h4>
+<p class="text-xs text-on-surface-variant">Amazon Web Services - 2023</p>
+</div>
+<span class="material-symbols-outlined text-outline text-sm">open_in_new</span>
+</div>
+<!-- Cert Card 3: Kubernetes -->
+<div class="glass-panel p-5 rounded-xl hairline-border flex gap-4 items-center">
+<div class="w-12 h-12 flex-shrink-0 bg-primary-container/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">hub</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-bold text-on-surface text-base">Certified Kubernetes Admin</h4>
+<p class="text-xs text-on-surface-variant">CNCF / Linux Foundation</p>
+</div>
+<span class="material-symbols-outlined text-outline text-sm">open_in_new</span>
+</div>
+<!-- Cert Card 4: Terraform -->
+<div class="glass-panel p-5 rounded-xl hairline-border flex gap-4 items-center">
+<div class="w-12 h-12 flex-shrink-0 bg-tertiary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">architecture</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-bold text-on-surface text-base">Terraform Associate</h4>
+<p class="text-xs text-on-surface-variant">HashiCorp - 2023</p>
+</div>
+<span class="material-symbols-outlined text-outline text-sm">open_in_new</span>
+</div>
+<!-- Additional Certs (Collapsed for mobile brevity but present) -->
+<div class="grid grid-cols-2 gap-3">
+<div class="glass-panel p-4 rounded-xl hairline-border text-center">
+<span class="font-bold text-on-surface text-sm block">HTML/CSS</span>
+<p class="text-[10px] text-outline mt-1">Meta Certified</p>
+</div>
+<div class="glass-panel p-4 rounded-xl hairline-border text-center">
+<span class="font-bold text-on-surface text-sm block">JS Expert</span>
+<p class="text-[10px] text-outline mt-1">HackerRank</p>
+</div>
+<div class="glass-panel p-4 rounded-xl hairline-border text-center">
+<span class="font-bold text-on-surface text-sm block">Vault Assoc.</span>
+<p class="text-[10px] text-outline mt-1">HashiCorp</p>
+</div>
+<div class="glass-panel p-4 rounded-xl hairline-border text-center">
+<span class="font-bold text-on-surface text-sm block">Security+</span>
+<p class="text-[10px] text-outline mt-1">CompTIA</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Technical Learning Journey (Simplified Timeline) -->
+<section class="mb-16 reveal">
+<h2 class="font-headline-md text-xl text-on-surface mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">trending_up</span> Learning Roadmap
+        </h2>
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<div class="w-[1px] flex-grow bg-outline-variant/30 my-1"></div>
+</div>
+<div class="pb-6">
+<span class="text-[10px] font-mono-label text-secondary uppercase">2023: Infrastructure</span>
+<p class="text-sm text-on-surface-variant mt-1">Mastered K8s, Terraform, and AWS architectural patterns.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-[1px] flex-grow bg-outline-variant/30 my-1"></div>
+</div>
+<div class="pb-6">
+<span class="text-[10px] font-mono-label text-primary uppercase">2024: AI &amp; Data</span>
+<p class="text-sm text-on-surface-variant mt-1">Focusing on LLM orchestration, vector databases, and eBPF observability.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+</div>
+<div>
+<span class="text-[10px] font-mono-label text-outline uppercase">2025-2026: Systems Design</span>
+<p class="text-sm text-on-surface-variant mt-1">Deep dive into platform engineering and autonomous system scaling.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Current Learning -->
+<section class="mb-16 reveal">
+<div class="glass-panel p-6 rounded-2xl border-primary/20">
+<h2 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">menu_book</span> Currently Learning
+            </h2>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<div class="w-1.5 h-1.5 rounded-full bg-primary/40"></div>
+                    Advanced eBPF Networking
+                </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<div class="w-1.5 h-1.5 rounded-full bg-primary/40"></div>
+                    RAG Implementation with LangChain
+                </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<div class="w-1.5 h-1.5 rounded-full bg-primary/40"></div>
+                    Designing Data-Intensive Applications
+                </li>
+</ul>
+</div>
+</section>
+<!-- 6. Resume Download -->
+<section class="reveal">
+<button class="w-full bg-primary text-on-primary font-bold py-5 rounded-2xl flex items-center justify-center gap-3 shadow-[0_10px_20px_rgba(192,193,255,0.2)] active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">download</span>
+            Download Full Resume (PDF)
+        </button>
+<p class="text-center text-[10px] text-outline mt-4 uppercase tracking-widest">Version 4.2 • Updated June 2024</p>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 py-8 px-margin-mobile">
+<div class="flex flex-col items-center gap-4 text-center">
+<div class="font-mono-label font-bold text-on-surface">MUNEEB.</div>
+<p class="font-body-base text-on-surface-variant text-xs">© 2024 Built with Precision.</p>
+<div class="flex gap-6 mt-2">
+<a class="text-xs text-outline hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="text-xs text-outline hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="text-xs text-outline hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+    function toggleSidebar() {
+        const sideNav = document.getElementById('sideNav');
+        const isOpen = !sideNav.classList.contains('translate-x-full');
+        if (isOpen) {
+            sideNav.classList.add('translate-x-full');
+            document.body.style.overflow = 'auto';
+        } else {
+            sideNav.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    // Scroll Reveal Observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Handle clicks outside sidenav to close
+    document.addEventListener('mousedown', (e) => {
+        const sideNav = document.getElementById('sideNav');
+        if (!sideNav.contains(e.target) && !sideNav.classList.contains('translate-x-full') && e.target.innerHTML !== 'menu') {
+            toggleSidebar();
+        }
+    });
+</script>
+</body></html>

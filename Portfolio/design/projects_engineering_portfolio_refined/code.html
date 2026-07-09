@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | Muneeb - Obsidian Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#31394d",
+                      "outline": "#908fa0",
+                      "on-tertiary-fixed-variant": "#703700",
+                      "tertiary-fixed": "#ffdcc5",
+                      "surface-container-lowest": "#060e20",
+                      "surface-container-low": "#131b2e",
+                      "inverse-primary": "#494bd6",
+                      "surface-container": "#171f33",
+                      "surface-tint": "#c0c1ff",
+                      "secondary": "#4cd7f6",
+                      "error": "#ffb4ab",
+                      "tertiary-container": "#d97721",
+                      "primary": "#c0c1ff",
+                      "on-primary-container": "#0d0096",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "outline-variant": "#464554",
+                      "primary-fixed": "#e1e0ff",
+                      "on-tertiary": "#4f2500",
+                      "on-error-container": "#ffdad6",
+                      "background": "#0b1326",
+                      "inverse-surface": "#dae2fd",
+                      "surface-dim": "#0b1326",
+                      "surface-container-highest": "#2d3449",
+                      "on-primary-fixed": "#07006c",
+                      "on-primary": "#1000a9",
+                      "on-tertiary-fixed": "#301400",
+                      "on-surface": "#dae2fd",
+                      "primary-container": "#8083ff",
+                      "on-background": "#dae2fd",
+                      "surface-container-high": "#222a3d",
+                      "surface": "#0b1326",
+                      "on-secondary-fixed": "#001f26",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "error-container": "#93000a",
+                      "on-error": "#690005",
+                      "secondary-fixed": "#acedff",
+                      "on-surface-variant": "#c7c4d7",
+                      "tertiary-fixed-dim": "#ffb783",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "on-secondary-container": "#00424e",
+                      "on-secondary": "#003640",
+                      "surface-variant": "#2d3449",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "tertiary": "#ffb783",
+                      "on-tertiary-container": "#452000",
+                      "secondary-container": "#03b5d3",
+                      "inverse-on-surface": "#283044"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-lg": "48px",
+                      "container-max": "1200px",
+                      "margin-desktop": "40px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "stack-sm": "12px",
+                      "stack-md": "24px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Geist"],
+                      "mono-label": ["JetBrains Mono"],
+                      "mono-code": ["JetBrains Mono"],
+                      "headline-md": ["Geist"],
+                      "display-lg-mobile": ["Geist"],
+                      "body-base": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "mono-label": ["13px", {"lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "mono-code": ["14px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-base": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .technical-grid {
+            background-image: 
+                linear-gradient(to right, rgba(144, 143, 160, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(144, 143, 160, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .glass-card {
+            background: rgba(23, 31, 51, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(192, 193, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(192, 193, 255, 0.3);
+            background: rgba(23, 31, 51, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(73, 75, 214, 0.2);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            position: relative;
+        }
+
+        .status-dot.completed { background-color: #4cd7f6; }
+        .status-dot.in-progress { background-color: #ffdcc5; }
+        .status-dot.planned { background-color: #908fa0; }
+
+        .status-dot.pulse::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 50%;
+            background: inherit;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+
+        .mask-fade-bottom {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        .indigo-glow {
+            filter: drop-shadow(0 0 15px rgba(192, 193, 255, 0.15));
+        }
+    </style>
+</head>
+<body class="font-body-base overflow-x-hidden">
+<!-- Background Layer -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+
+<div class="absolute inset-0 technical-grid"></div>
+<div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2"></div>
+</div>
+<!-- Navigation Header -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="font-display-lg text-body-base font-bold tracking-tighter text-primary">MUNEEB</div>
+<div class="hidden md:flex items-center gap-stack-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-mono-label text-mono-label" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-mono-label text-mono-label" href="#">About</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-mono-label text-mono-label" href="#">Skills</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-mono-label text-mono-label" href="#">Projects</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-mono-label text-mono-label" href="#">Education</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-mono-label text-mono-label" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary-container px-6 py-2 rounded-lg font-mono-label text-mono-label font-bold transition-transform active:scale-95">
+                Resume
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="relative z-10 pt-32 pb-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<header class="mb-20">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/20 mb-6">
+<span class="status-dot completed pulse"></span>
+<span class="font-mono-label text-[11px] uppercase tracking-widest text-primary">Portfolio Repository v2.0.4</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 max-w-4xl">
+                Technical Deep Dives &amp; <span class="text-primary">Case Studies</span>
+</h1>
+<p class="text-on-surface-variant font-body-base text-lg max-w-2xl leading-relaxed">
+                A curated selection of architecture-first projects focusing on full-stack development, AI integration, and systems engineering.
+            </p>
+</header>
+<!-- Project Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Project 1: Cloud-Native Logistics Engine -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">Architecture</span>
+<h3 class="font-headline-md text-xl text-on-surface">NexusFlow Logistics</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">architecture</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Event-driven microservices architecture for real-time supply chain tracking with sub-200ms latency across multi-region AWS clusters.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Kubernetes</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Go</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Kafka</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot completed"></span>
+<span class="font-mono-label text-[11px] text-secondary">Completed</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">Read Case Study →</a>
+</div>
+</div>
+<!-- Project 2: Generative AI Documentation Agent -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">AI / ML</span>
+<h3 class="font-headline-md text-xl text-on-surface">DocuMind AI</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">neurology</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    RAG-based AI assistant trained on complex enterprise documentation to provide contextual code snippets and architecture explanations.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">LangChain</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Next.js</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Pinecone</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot in-progress pulse"></span>
+<span class="font-mono-label text-[11px] text-tertiary">In Progress</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">View Progress →</a>
+</div>
+</div>
+<!-- Project 3: Distributed SQL Ledger -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">Systems</span>
+<h3 class="font-headline-md text-xl text-on-surface">TitanLedger DB</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">database</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    A high-performance, strictly-serializable distributed ledger designed for high-frequency financial transactions using the Raft consensus algorithm.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Rust</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">gRPC</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">PostgreSQL</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot completed"></span>
+<span class="font-mono-label text-[11px] text-secondary">Completed</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">GitHub Repo →</a>
+</div>
+</div>
+<!-- Project 4: Real-time Analytics Visualizer -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">Front-End</span>
+<h3 class="font-headline-md text-xl text-on-surface">Vortex Dash</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">monitoring</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Web-based 3D visualization dashboard for monitoring global sensor networks using Three.js and custom shader materials.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">React</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Three.js</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">WebSockets</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot completed"></span>
+<span class="font-mono-label text-[11px] text-secondary">Completed</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">Launch App →</a>
+</div>
+</div>
+<!-- Project 5: Identity & Access Management Platform -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">Security</span>
+<h3 class="font-headline-md text-xl text-on-surface">SecureAuth Portal</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">fingerprint</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Zero-trust authentication system implementing FIDO2, WebAuthn, and dynamic risk-based access control policies.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Node.js</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Auth0</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Redis</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot planned"></span>
+<span class="font-mono-label text-[11px] text-outline">Planned</span>
+</div>
+<span class="text-outline/40 font-mono-label text-[11px] uppercase tracking-tighter italic">Q4 2024</span>
+</div>
+</div>
+<!-- Project 6: Serverless Image Processor -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">DevOps</span>
+<h3 class="font-headline-md text-xl text-on-surface">CloudScale Assets</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">cloud_done</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Auto-scaling image transformation pipeline using AWS Lambda and S3 triggers, serving over 1M assets daily.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Terraform</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Python</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">AWS</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot completed"></span>
+<span class="font-mono-label text-[11px] text-secondary">Completed</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">Docs →</a>
+</div>
+</div>
+<!-- Project 7: Automated Trading Bot -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">FinTech</span>
+<h3 class="font-headline-md text-xl text-on-surface">AlphaTrend Engine</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">trending_up</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Algorithmic trading platform focusing on arbitrage opportunities in crypto markets using low-level socket connections.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">C++</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Redis</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Docker</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot in-progress pulse"></span>
+<span class="font-mono-label text-[11px] text-tertiary">In Progress</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">Source Code →</a>
+</div>
+</div>
+<!-- Project 8: Collaborative Code Editor -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">Tools</span>
+<h3 class="font-headline-md text-xl text-on-surface">SynchroCode</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">code_blocks</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Real-time collaborative IDE with CRDT-based text synchronization and integrated terminal emulation.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">WebRTC</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">React</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Monaco</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot completed"></span>
+<span class="font-mono-label text-[11px] text-secondary">Completed</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">Live Demo →</a>
+</div>
+</div>
+<!-- Project 9: Smart Contract Audit Framework -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">Blockchain</span>
+<h3 class="font-headline-md text-xl text-on-surface">EtherScan Sentinel</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">security</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Automated vulnerability scanner for Solidity contracts using static analysis and symbolic execution.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Solidity</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Python</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Hardhat</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot completed"></span>
+<span class="font-mono-label text-[11px] text-secondary">Completed</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">Whitepaper →</a>
+</div>
+</div>
+<!-- Project 10: IoT Mesh Network Manager -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">Embedded</span>
+<h3 class="font-headline-md text-xl text-on-surface">MeshControl Node</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">hub</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Centralized controller for managing thousands of low-power IoT nodes using Zigbee and custom MQTT bridges.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Rust</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">MQTT</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">InfluxDB</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot in-progress pulse"></span>
+<span class="font-mono-label text-[11px] text-tertiary">In Progress</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">Status Page →</a>
+</div>
+</div>
+<!-- Project 11: E-commerce Recommendation System -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">Data Science</span>
+<h3 class="font-headline-md text-xl text-on-surface">ShopSense Rec</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">shopping_cart</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Deep learning model for personalizing product recommendations based on clickstream data and user graph embeddings.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">PyTorch</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Scikit-learn</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Neo4j</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot completed"></span>
+<span class="font-mono-label text-[11px] text-secondary">Completed</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">GitHub →</a>
+</div>
+</div>
+<!-- Project 12: Micro-Frontend Shell -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">Infrastructure</span>
+<h3 class="font-headline-md text-xl text-on-surface">ModuleFederator UI</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">layers</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Custom framework for orchestrating micro-frontends with shared state and independent deployment cycles.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Webpack 5</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Svelte</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Zustand</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot planned"></span>
+<span class="font-mono-label text-[11px] text-outline">Planned</span>
+</div>
+<span class="text-outline/40 font-mono-label text-[11px] uppercase tracking-tighter italic">Pending Specs</span>
+</div>
+</div>
+<!-- Project 13: CI/CD Observability Dashboard -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">SRE</span>
+<h3 class="font-headline-md text-xl text-on-surface">PipePulse Monitor</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">bar_chart_4_bars</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Consolidated dashboard for tracking build health, deployment velocity, and DORA metrics across GitHub Actions and GitLab CI.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Go</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Prometheus</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Grafana</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot completed"></span>
+<span class="font-mono-label text-[11px] text-secondary">Completed</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">Case Study →</a>
+</div>
+</div>
+<!-- Project 14: Mobile Healthcare App -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">Mobile</span>
+<h3 class="font-headline-md text-xl text-on-surface">HealthSync Mobile</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">medical_services</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    HIPAA-compliant mobile application for remote patient monitoring and telemedicine consultations.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Flutter</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Firebase</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">GraphQL</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot completed"></span>
+<span class="font-mono-label text-[11px] text-secondary">Completed</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">App Store →</a>
+</div>
+</div>
+<!-- Project 15: Game Engine Core -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-outline uppercase mb-1">Graphics</span>
+<h3 class="font-headline-md text-xl text-on-surface">Aura Rendering Engine</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">sports_esports</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
+                    Lightweight 2D/3D game engine core focusing on efficient memory management and entity-component systems.
+                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">C#</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">Vulkan</span>
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-mono-label text-[11px] rounded uppercase">SDL2</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
+<div class="flex items-center">
+<span class="status-dot in-progress pulse"></span>
+<span class="font-mono-label text-[11px] text-tertiary">In Progress</span>
+</div>
+<a class="text-primary hover:underline font-mono-label text-[11px] uppercase tracking-tighter" href="#">Dev Log →</a>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<section class="mt-stack-lg border-t border-outline-variant/20 pt-20 text-center">
+<h2 class="font-headline-md text-on-surface mb-4">Have a complex technical challenge?</h2>
+<p class="text-on-surface-variant font-body-base mb-10 max-w-xl mx-auto">
+                I specialize in building scalable systems and solving intricate engineering problems. Let's discuss your next breakthrough.
+            </p>
+<button class="group relative px-8 py-4 bg-primary text-on-primary-container font-mono-label text-sm font-bold uppercase tracking-widest overflow-hidden transition-all hover:pr-12">
+<span class="relative z-10">Initiate Discussion</span>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-xl">terminal</span>
+</span>
+</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/10 w-full py-stack-md relative z-10 mt-stack-lg">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-stack-sm">
+<div class="font-mono-label text-on-surface text-mono-label">MUNEEB_CORE</div>
+<div class="font-mono-label text-outline text-mono-label">
+                © 2024 Muneeb. Built with precision.
+            </div>
+<div class="flex gap-stack-md">
+<a class="text-outline hover:text-secondary transition-colors font-mono-label text-mono-label" href="#">GitHub</a>
+<a class="text-outline hover:text-secondary transition-colors font-mono-label text-mono-label" href="#">LinkedIn</a>
+<a class="text-outline hover:text-secondary transition-colors font-mono-label text-mono-label" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for project cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

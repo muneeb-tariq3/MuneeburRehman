@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Geist:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "secondary-fixed-dim": "#4cd7f6",
+                            "tertiary-fixed": "#ffdcc5",
+                            "on-primary-container": "#0d0096",
+                            "surface-variant": "#2d3449",
+                            "primary-fixed": "#e1e0ff",
+                            "surface": "#0b1326",
+                            "surface-container-low": "#131b2e",
+                            "on-secondary-container": "#00424e",
+                            "on-secondary-fixed": "#001f26",
+                            "surface-tint": "#c0c1ff",
+                            "error": "#ffb4ab",
+                            "on-primary-fixed": "#07006c",
+                            "surface-container-high": "#222a3d",
+                            "secondary": "#4cd7f6",
+                            "on-surface": "#dae2fd",
+                            "on-secondary-fixed-variant": "#004e5c",
+                            "secondary-fixed": "#acedff",
+                            "on-background": "#dae2fd",
+                            "inverse-on-surface": "#283044",
+                            "on-error-container": "#ffdad6",
+                            "surface-container-highest": "#2d3449",
+                            "outline-variant": "#464554",
+                            "on-surface-variant": "#c7c4d7",
+                            "outline": "#908fa0",
+                            "tertiary-container": "#d97721",
+                            "error-container": "#93000a",
+                            "primary-fixed-dim": "#c0c1ff",
+                            "on-secondary": "#003640",
+                            "secondary-container": "#03b5d3",
+                            "on-primary-fixed-variant": "#2f2ebe",
+                            "surface-container": "#171f33",
+                            "surface-container-lowest": "#060e20",
+                            "on-tertiary": "#4f2500",
+                            "surface-dim": "#0b1326",
+                            "on-tertiary-fixed": "#301400",
+                            "on-tertiary-fixed-variant": "#703700",
+                            "tertiary": "#ffb783",
+                            "on-primary": "#1000a9",
+                            "on-tertiary-container": "#452000",
+                            "tertiary-fixed-dim": "#ffb783",
+                            "primary": "#c0c1ff",
+                            "on-error": "#690005",
+                            "background": "#0b1326",
+                            "primary-container": "#8083ff",
+                            "inverse-primary": "#494bd6",
+                            "surface-bright": "#31394d",
+                            "inverse-surface": "#dae2fd"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "stack-lg": "48px",
+                            "stack-md": "24px",
+                            "gutter": "24px",
+                            "margin-mobile": "20px",
+                            "margin-desktop": "40px",
+                            "unit": "8px",
+                            "container-max": "1200px",
+                            "stack-sm": "12px"
+                        },
+                        "fontFamily": {
+                            "body-base": ["Inter"],
+                            "mono-label": ["JetBrains Mono"],
+                            "mono-code": ["JetBrains Mono"],
+                            "headline-md": ["Geist"],
+                            "display-lg": ["Geist"],
+                            "display-lg-mobile": ["Geist"]
+                        },
+                        "fontSize": {
+                            "body-base": ["16px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }],
+                            "mono-label": ["13px", { "lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                            "mono-code": ["14px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                            "headline-md": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                            "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                            "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<style>
+        .glass-card {
+            background: rgba(23, 31, 51, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(144, 143, 160, 0.2);
+        }
+        .status-pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .status-completed { background-color: #4cd7f6; box-shadow: 0 0 8px #4cd7f6; }
+        .status-in-progress { background-color: #ffdcc5; box-shadow: 0 0 8px #ffdcc5; animation: pulse 2s infinite; }
+        .status-planned { background-color: #908fa0; opacity: 0.6; }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            70% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="font-body-base text-body-base custom-scrollbar overflow-x-hidden bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 h-20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full">
+<a class="font-headline-md text-headline-md font-bold text-primary tracking-tighter" href="#">MUNEEB.</a>
+<div class="hidden md:flex gap-stack-md items-center">
+<a class="font-mono-label text-mono-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-mono-label text-mono-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-mono-label text-mono-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Skills</a>
+<a class="font-mono-label text-mono-label uppercase tracking-widest text-primary font-bold border-b-2 border-primary pb-1" href="#">Projects</a>
+<a class="font-mono-label text-mono-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Education</a>
+<a class="font-mono-label text-mono-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-stack-sm">
+<button class="p-2 hover:opacity-80 transition-all active:scale-95 duration-100">
+<span class="material-symbols-outlined text-primary" data-original-icon="dark_mode">dark_mode</span>
+</button>
+<button class="md:hidden p-2 hover:opacity-80 transition-all active:scale-95 duration-100" onclick="document.getElementById('side-nav').classList.remove('translate-x-full')">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Mobile) -->
+<aside class="fixed inset-y-0 right-0 w-80 z-[60] bg-surface-container-high/95 backdrop-blur-2xl border-l border-outline-variant/50 shadow-2xl transition-transform duration-500 translate-x-full flex flex-col p-gutter gap-stack-sm" id="side-nav">
+<div class="flex justify-between items-center mb-stack-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Navigation</h2>
+<p class="font-mono-label text-mono-label text-on-surface-variant opacity-70">Systems Engineer</p>
+</div>
+<button class="p-2 text-on-surface" onclick="document.getElementById('side-nav').classList.add('translate-x-full')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant flex items-center px-4 py-3 hover:bg-surface-variant/50 rounded-xl transition-all duration-300 hover:pl-6 group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary">home</span>
+<span class="font-mono-label text-mono-label">Home</span>
+</a>
+<a class="bg-primary-container text-on-primary-container rounded-xl flex items-center px-4 py-3 transition-all duration-300 hover:pl-6" href="#">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">code</span>
+<span class="font-mono-label text-mono-label">Projects</span>
+</a>
+<a class="text-on-surface-variant flex items-center px-4 py-3 hover:bg-surface-variant/50 rounded-xl transition-all duration-300 hover:pl-6 group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary">person</span>
+<span class="font-mono-label text-mono-label">About</span>
+</a>
+<a class="text-on-surface-variant flex items-center px-4 py-3 hover:bg-surface-variant/50 rounded-xl transition-all duration-300 hover:pl-6 group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary">terminal</span>
+<span class="font-mono-label text-mono-label">Skills</span>
+</a>
+<a class="text-on-surface-variant flex items-center px-4 py-3 hover:bg-surface-variant/50 rounded-xl transition-all duration-300 hover:pl-6 group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary">school</span>
+<span class="font-mono-label text-mono-label">Education</span>
+</a>
+<a class="text-on-surface-variant flex items-center px-4 py-3 hover:bg-surface-variant/50 rounded-xl transition-all duration-300 hover:pl-6 group" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary">mail</span>
+<span class="font-mono-label text-mono-label">Contact</span>
+</a>
+</div>
+</aside>
+<main class="pt-32 pb-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Header Section -->
+<header class="relative mb-stack-lg overflow-hidden rounded-2xl p-6 md:p-12">
+<div class="absolute inset-0 z-0" id="header-background-container">
+            {{DATA:ANIMATION:ANIMATION_1}}
+        </div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-stack-sm">
+<span class="status-pulse status-in-progress"></span>
+<span class="font-mono-label text-mono-label text-secondary uppercase tracking-[0.2em]">Engineering Projects / 2024-2026</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface max-w-3xl">
+                The <span class="text-primary italic">Obsidian</span> Build Log.
+            </h1>
+<p class="mt-stack-md font-body-base text-body-base text-on-surface-variant max-w-2xl">
+                A technical directory of 15 core systems ranging from infrastructure orchestration to advanced AI integrations.
+            </p>
+</div>
+</header>
+<!-- Projects Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- 1. IMS -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">IMS</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-secondary uppercase">Completed</span>
+<span class="status-pulse status-completed"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Enterprise Inventory Management System with real-time sync.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">React</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Node.js</span>
+</div>
+</div>
+</div>
+<!-- 2. School Management -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">School Management</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-secondary uppercase">Completed</span>
+<span class="status-pulse status-completed"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Automated grading and attendance portal for institutions.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Python</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Django</span>
+</div>
+</div>
+</div>
+<!-- 3. WeatherWave -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">WeatherWave</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-secondary uppercase">Completed</span>
+<span class="status-pulse status-completed"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Hyper-local weather forecasting using OpenWeather APIs.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Flutter</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Firebase</span>
+</div>
+</div>
+</div>
+<!-- 4. AI Lyrics -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">AI Lyrics</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-secondary uppercase">Completed</span>
+<span class="status-pulse status-completed"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Generative AI model for songwriting and meter analysis.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">PyTorch</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">OpenAI</span>
+</div>
+</div>
+</div>
+<!-- 5. DeepFetch -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">DeepFetch</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-secondary uppercase">Completed</span>
+<span class="status-pulse status-completed"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Distributed web crawler optimized for JS-heavy sites.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Go</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Redis</span>
+</div>
+</div>
+</div>
+<!-- 6. Jarvis -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">Jarvis</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-tertiary-fixed-dim uppercase">In Dev</span>
+<span class="status-pulse status-in-progress"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Voice-activated automation hub for home infrastructure.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Python</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">MQTT</span>
+</div>
+</div>
+</div>
+<!-- 7. Portfolio 2026 -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">Portfolio 2026</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-tertiary-fixed-dim uppercase">In Progress</span>
+<span class="status-pulse status-in-progress"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Next-gen 3D immersive portfolio using WebGL.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Three.js</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Wasm</span>
+</div>
+</div>
+</div>
+<!-- 8. FreeBox -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all border-l-2 border-l-tertiary-fixed-dim">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">FreeBox</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-tertiary-fixed-dim uppercase">In Progress</span>
+<span class="status-pulse status-in-progress"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Decentralized cloud storage with E2E encryption.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Rust</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">IPFS</span>
+</div>
+</div>
+</div>
+<!-- 9. E-Commerce -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">E-Commerce</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-tertiary-fixed-dim uppercase">In Progress</span>
+<span class="status-pulse status-in-progress"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Headless commerce API for high-scale retail.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Next.js</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Postgres</span>
+</div>
+</div>
+</div>
+<!-- 10. Netflix Clone -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">Netflix Clone</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-secondary uppercase">Completed</span>
+<span class="status-pulse status-completed"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Video streaming UI with dynamic content loading.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">React</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">TMDB API</span>
+</div>
+</div>
+</div>
+<!-- 11. YouTube Clone -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">YouTube Clone</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-secondary uppercase">Completed</span>
+<span class="status-pulse status-completed"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Video hosting platform with comment &amp; search logic.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Vue.js</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Express</span>
+</div>
+</div>
+</div>
+<!-- 12. DevOps Pipeline -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all border-l-2 border-l-secondary">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">DevOps Pipeline</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-secondary uppercase">Completed</span>
+<span class="status-pulse status-completed"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Automated CI/CD with Kubernetes orchestration.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">GitHub Actions</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Helm</span>
+</div>
+</div>
+</div>
+<!-- 13. Linux Toolkit -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">Linux Toolkit</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-secondary uppercase">Completed</span>
+<span class="status-pulse status-completed"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Collection of Bash and Python sys-admin utilities.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Bash</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Systemd</span>
+</div>
+</div>
+</div>
+<!-- 14. Network Scanner -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all border-l-2 border-l-outline">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">Network Scanner</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-outline uppercase">Planned</span>
+<span class="status-pulse status-planned"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Port scanner and vulnerability auditor for local nets.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">C++</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">Nmap</span>
+</div>
+</div>
+</div>
+<!-- 15. Task Dashboard -->
+<div class="glass-card p-5 rounded-xl flex flex-col justify-between hover:border-primary/50 transition-all">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-xl text-on-surface">Task Dashboard</h3>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-mono-label text-secondary uppercase">Completed</span>
+<span class="status-pulse status-completed"></span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Project management tool with Kanban &amp; GANTT views.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">React</span>
+<span class="bg-surface-variant/40 px-2 py-1 text-[10px] font-mono-label text-on-surface-variant rounded">GraphQL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<section class="mt-stack-lg border-t border-outline-variant/30 pt-stack-lg text-center px-6">
+<h2 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-stack-sm">Looking for custom architecture?</h2>
+<p class="text-on-surface-variant text-sm md:text-base mb-stack-md max-w-xl mx-auto">
+            I am currently open to consulting for infrastructure optimization, DevOps migrations, and high-performance backend development.
+        </p>
+<div class="flex flex-col gap-6 justify-center items-center">
+<button class="w-full sm:w-auto px-8 py-4 bg-primary text-on-primary rounded-xl font-mono-label font-bold uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all">
+                Initiate Discussion
+            </button>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="font-mono-label text-xs">Available for Q4 2024</span>
+<span class="status-pulse status-in-progress"></span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 w-full py-stack-lg">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop gap-gutter">
+<div class="flex flex-col items-center md:items-start">
+<a class="font-mono-label text-mono-label font-bold text-on-surface mb-2" href="#">MUNEEB.</a>
+<p class="font-body-base text-xs text-secondary">© 2024 MUNEEB. Built with Precision.</p>
+</div>
+<div class="flex gap-stack-md">
+<a class="font-body-base text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">GitHub</a>
+<a class="font-body-base text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="font-body-base text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Source</a>
+</div>
+</div>
+</footer>
+<script>
+    // Intersection Observer for slide-in entrance animations
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.glass-card');
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }, index * 50);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        cards.forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            card.style.transition = "all 0.5s ease-out";
+            observer.observe(card);
+        });
+    });
+</script>
+</body></html>
