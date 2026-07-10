@@ -2,8 +2,9 @@ export const navItems = [
   { label: 'Home', path: '/', icon: 'home' },
   { label: 'About', path: '/about', icon: 'person' },
   { label: 'Skills', path: '/skills', icon: 'terminal' },
-  { label: 'Projects', path: '/projects', icon: 'code' },
   { label: 'Education', path: '/education', icon: 'school' },
+  { label: 'Projects', path: '/projects', icon: 'code' },
+  { label: 'Blog', path: '/blog', icon: 'school' },
   { label: 'Contact', path: '/contact', icon: 'mail' },
 ];
 
@@ -163,4 +164,72 @@ export const certifications = [
   ['Front-End Developer (React)', 'Achieved by cracking the dedicated React developement Test by Hacker Rank'],
   ['Python (Basics)', 'Achieved by Resolving the Python Basic Automation Test by Hacker Rank'],
   ['Javascript (Intermediate)', 'Created a Progam to Add different numbers and prosess them using Math Object by Hacker Rank'],
+];
+
+export const blogPosts = [
+  {
+    slug: 'linops-toolkit',
+    title: 'Building LinOps Toolkit: From Linux Learner to System Builder',
+    date: '2025-01-20',
+    eyebrow: 'Project Story',
+    description:
+      'A hands‑on journey into Linux, DevOps, and automation through a single practical project.',
+    intro:
+      "Learning Linux was one of the best decisions I made as a developer, but I quickly discovered that simply reading documentation wasn't enough. I wanted a way to practice commands, understand how the operating system works, and automate everyday tasks. That idea became <span class=\"text-primary font-mono font-bold\">LinOps Toolkit</span>.",
+    whatIs:
+      'LinOps Toolkit is a personal project that I built to improve my Linux, DevOps, and automation skills through hands‑on experience. Instead of creating another simple application, I wanted to build a toolkit that solves real problems while helping me learn new technologies along the way.',
+    techStack: [
+      'Python',
+      'Flask',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Bash Scripting',
+      'Linux',
+      'DevOps',
+    ],
+    modules: [
+      {
+        icon: 'monitoring',
+        title: 'System Management',
+        text: 'Monitor CPU, memory, disk, processes, files, and network details. Understanding how Linux manages hardware behind the scenes.',
+      },
+      {
+        icon: 'rocket_launch',
+        title: 'Automation & DevOps',
+        text: 'Execute automation scripts, manage services, inspect logs. Reducing manual toil and learning practical DevOps.',
+      },
+      {
+        icon: 'shield_lock',
+        title: 'Cybersecurity & Learning',
+        text: 'Safe experimentation environment for commands, permissions, and security concepts without risking production systems.',
+      },
+    ],
+    lessons:
+      'One of the biggest lessons I learned while building LinOps Toolkit was that software development is much more than writing code. I spent a lot of time debugging unexpected issues, improving performance, organizing the project structure, and making the user experience more intuitive. Every challenge became an opportunity to learn something new.',
+    tips: [
+      {
+        icon: 'lightbulb',
+        title: 'Learn by building, not by reading',
+        text: 'Real understanding comes from hands‑on projects. LinOps Toolkit transformed abstract Linux concepts into practical skills I use daily.',
+      },
+      {
+        icon: 'bug_report',
+        title: 'Debugging is a superpower',
+        text: 'Most of my learning happened while fixing unexpected errors. Embrace them – each bug teaches you something new about the system.',
+      },
+      {
+        icon: 'autorenew',
+        title: 'Automate early',
+        text: 'Repetitive tasks are a signal to write a script. Even small automation can save hours and reduce mistakes over time.',
+      },
+      {
+        icon: 'security',
+        title: 'Experiment safely',
+        text: 'Use isolated environments (VMs, containers) to test commands without fear. The Cybersecurity module was born from this mindset.',
+      },
+    ],
+    future:
+      'I plan to expand the toolkit with more advanced automation, stronger security utilities, and additional DevOps features. My goal is to make LinOps Toolkit not only a personal learning platform but also a useful resource for students and Linux enthusiasts who want to build their skills through real‑world practice.',
+  },
 ];

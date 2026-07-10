@@ -22,7 +22,7 @@ function Navbar() {
             to="/"
             className="text-2xl font-bold tracking-tight text-primary md:text-3xl"
           >
-            MUNEEB.
+            Muneeb Tariq
           </NavLink>
 
           {/* Desktop Navigation */}
