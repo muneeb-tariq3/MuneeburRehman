@@ -36,6 +36,7 @@ function AnimatedRoutes() {
         <Route path="/projects" element={<motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit"><Projects /></motion.div>} />
         <Route path="/education" element={<motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit"><Education /></motion.div>} />
         <Route path="/blog" element={<motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit"><Blog /></motion.div>} />
+        <Route path="/blog/:slug" element={<motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit"><Blog /></motion.div>} />
         <Route path="/contact" element={<motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit"><Contact /></motion.div>} />
       </Routes>
     </AnimatePresence>
@@ -46,26 +47,18 @@ function App() {
   return (
     <Router>
       <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
-        
-        {/* Global Background */}
         <div className="fixed inset-0 pointer-events-none">
           <div className="absolute inset-0 obsidian-grid opacity-40" />
           <div className="absolute top-0 left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-emerald-500/5 blur-3xl" />
           <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-cyan-500/5 blur-3xl" />
         </div>
-
-        {/* CHANGED: Added flex, flex-col, and min-h-screen here to make a vertical column layout */}
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
-
-          {/* CHANGED: Wrapped AnimatedRoutes in a main tag with flex-1 to claim all remaining empty space */}
           <main className="flex-1">
             <AnimatedRoutes />
           </main>
-
           <Footer />
         </div>
-
       </div>
     </Router>
   );

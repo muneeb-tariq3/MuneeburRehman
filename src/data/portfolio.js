@@ -170,10 +170,12 @@ export const blogPosts = [
   {
     slug: 'linops-toolkit',
     title: 'Building LinOps Toolkit: From Linux Learner to System Builder',
-    date: '2025-01-20',
+    date: '2026-Februray',
+    role: 'Solo Developer',
+    displaySkills: ['Python', 'Flask', 'Linux'],
     eyebrow: 'Project Story',
     description:
-      'A hands‑on journey into Linux, DevOps, and automation through a single practical project.',
+      'LinOps Toolkit is a personal project that I built to improve my Linux, DevOps, and automation skills through hands-on experience. Instead of creating another simple application, I wanted to build a toolkit that solves real problems while helping me learn new technologies along the way. It combines a clean web interface with powerful Linux commands and automation scripts, making it easier to interact with common system administration tasks.',
     intro:
       "Learning Linux was one of the best decisions I made as a developer, but I quickly discovered that simply reading documentation wasn't enough. I wanted a way to practice commands, understand how the operating system works, and automate everyday tasks. That idea became <span class=\"text-primary font-mono font-bold\">LinOps Toolkit</span>.",
     whatIs:
@@ -188,48 +190,250 @@ export const blogPosts = [
       'Linux',
       'DevOps',
     ],
+    displaySkills: ['Python', 'Flask', 'Linux'], // top‑3 skills shown on card
+    modules: [ 
+      {
+        icon: 'terminal',
+        title: 'Linux Fundamentals',
+        text: 'Strengthened my understanding of Linux commands, file systems, permissions, process management, and everyday system administration through hands-on development.',
+      },
+      {
+        icon: 'settings_suggest',
+        title: 'Automation Mindset',
+        text: 'Learned how automation can simplify repetitive tasks using Python and Bash, making Linux workflows faster, more reliable, and easier to maintain.',
+      },
+      {
+        icon: 'psychology',
+        title: 'Problem Solving',
+        text: 'Improved my debugging, research, and troubleshooting skills by solving real Linux challenges, designing modular code, and continuously refining the toolkit.',
+      },
+   ],
+    lessons: 'Building LinOps Toolkit taught me the importance of writing clean, modular, and reusable code for long-term maintainability. I gained hands-on experience with Linux system administration, shell scripting, and automation techniques. The project also improved my debugging and problem-solving skills by exposing me to real-world development challenges. I learned how to structure applications into independent modules for easier expansion and maintenance. Most importantly, it showed me that practical projects are one of the best ways to master Linux, DevOps, and cybersecurity concepts.',
+    tips: [ 
+        {
+          icon: 'terminal',
+          title: 'Practice Every Command',
+          text: 'Reading Linux documentation helps, but running commands yourself is the fastest way to understand how the system really works.',
+        },
+        {
+          icon: 'bug_report',
+          title: "Debug, Don't Panic",
+          text: 'Errors are part of development. Read logs carefully, troubleshoot step by step, and treat every bug as a learning opportunity.',
+        },
+        {
+          icon: 'settings',
+          title: 'Automate Repetitive Tasks',
+          text: 'If you find yourself doing the same task repeatedly, automate it. Even small scripts can save hours of manual work.',
+        },
+        {
+          icon: 'school',
+          title: 'Build While Learning',
+          text: 'The best way to learn Linux and DevOps is by creating real projects instead of only following tutorials or reading guides.',
+        },
+     ],
+    future: 'New Linux utilities and automation features have been added to make everyday administrative tasks more efficient. The user experience has also been refined with a cleaner interface and smoother navigation. Development is ongoing, with future updates planned to include more advanced automation and Linux administration tools.',
+  },
+  {
+    slug: 'portfolio-vue',
+    title: 'Building My Personal Portfolio with Vue.js',
+    date: '2024-September',
+    role: 'Frontend Developer',
+    eyebrow: 'Project Story',
+    description:
+      'The portfolio is built with Vue 3, JavaScript, HTML, CSS, and Bootstrap, creating a modern, responsive, and user-friendly experience. My goal was to build a website that not only looks professional but also performs well on different devices and screen sizes. As the project grew, I continued adding new features. I integrated EmailJS so visitors could send messages directly from the contact page without needing a dedicated backend.',
+      intro:
+      "As I continued learning web development, I realized that I needed more than just completed projects—I needed a place to showcase them. That idea led me to build my own portfolio website using <span class=\"text-primary font-mono font-bold\">Vue.js</span>. Instead of using a pre‑made template, I decided to design and develop everything myself so that it truly represented my skills and personality.",
+    whatIs:
+      'The portfolio is built with Vue 3, JavaScript, HTML, CSS, and Bootstrap, creating a modern, responsive, and user‑friendly experience. My goal was to build a website that not only looks professional but also performs well on different devices and screen sizes.',
+    techStack: [
+      'Vue 3',
+      'JavaScript',
+      'HTML',
+      'CSS',
+      'Bootstrap',
+      'EmailJS',
+      'AI Chatbot',
+      'SEO',
+    ],
+    displaySkills: ['Vue 3', 'Bootstrap', 'EmailJS'],
     modules: [
       {
-        icon: 'monitoring',
-        title: 'System Management',
-        text: 'Monitor CPU, memory, disk, processes, files, and network details. Understanding how Linux manages hardware behind the scenes.',
+        icon: 'component_exchange',
+        title: 'Reusable Components',
+        text: 'Built the UI with modular Vue components – Navbar, Footer, Project Cards, and more – making maintenance and future expansion straightforward.',
       },
       {
-        icon: 'rocket_launch',
-        title: 'Automation & DevOps',
-        text: 'Execute automation scripts, manage services, inspect logs. Reducing manual toil and learning practical DevOps.',
+        icon: 'forward_to_inbox',
+        title: 'Contact Integration',
+        text: 'Integrated EmailJS for a fully client‑side contact form, plus an AI chatbot interface to answer visitor questions automatically.',
       },
       {
-        icon: 'shield_lock',
-        title: 'Cybersecurity & Learning',
-        text: 'Safe experimentation environment for commands, permissions, and security concepts without risking production systems.',
+        icon: 'speed',
+        title: 'Performance & SEO',
+        text: 'Optimised responsiveness, reduced code bloat, and applied SEO fundamentals to help the portfolio rank and load quickly.',
       },
     ],
     lessons:
-      'One of the biggest lessons I learned while building LinOps Toolkit was that software development is much more than writing code. I spent a lot of time debugging unexpected issues, improving performance, organizing the project structure, and making the user experience more intuitive. Every challenge became an opportunity to learn something new.',
+      'Building this portfolio taught me much more than just Vue.js. I gained experience with component‑based architecture, routing, state management, responsive design, deployment, and debugging. Every improvement made the website cleaner, faster, and more professional.',
     tips: [
       {
-        icon: 'lightbulb',
-        title: 'Learn by building, not by reading',
-        text: 'Real understanding comes from hands‑on projects. LinOps Toolkit transformed abstract Linux concepts into practical skills I use daily.',
+        icon: 'design_services',
+        title: 'Own your design',
+        text: 'Avoid templates when you can. Designing from scratch forces you to truly understand layout, spacing, and user experience.',
       },
       {
-        icon: 'bug_report',
-        title: 'Debugging is a superpower',
-        text: 'Most of my learning happened while fixing unexpected errors. Embrace them – each bug teaches you something new about the system.',
+        icon: 'api',
+        title: 'Integrate real APIs',
+        text: 'Adding EmailJS and the chatbot gave me hands‑on experience connecting frontends to external services without a backend.',
       },
       {
-        icon: 'autorenew',
-        title: 'Automate early',
-        text: 'Repetitive tasks are a signal to write a script. Even small automation can save hours and reduce mistakes over time.',
+        icon: 'trending_up',
+        title: 'Treat it as a living project',
+        text: 'I continuously update the portfolio with new work, features, and performance tweaks – it grows with me.',
       },
       {
-        icon: 'security',
-        title: 'Experiment safely',
-        text: 'Use isolated environments (VMs, containers) to test commands without fear. The Cybersecurity module was born from this mindset.',
+        icon: 'search',
+        title: 'Learn SEO basics',
+        text: 'Even small SEO improvements (meta tags, semantic HTML) help your work get discovered. It’s a crucial developer skill.',
       },
     ],
     future:
-      'I plan to expand the toolkit with more advanced automation, stronger security utilities, and additional DevOps features. My goal is to make LinOps Toolkit not only a personal learning platform but also a useful resource for students and Linux enthusiasts who want to build their skills through real‑world practice.',
+      'The project is still evolving. I regularly update it with new projects, improved designs, and additional features as I continue learning new technologies. Rather than treating it as a finished product, I see it as a living project that grows alongside my skills as a developer.',
   },
+  {
+  slug: 'python-smart-assistant',
+  title: 'Building a Python Smart Assistant: Combining AI, Voice Recognition, and Web Automation',
+  date: '2025-April',
+  role: 'AI Assisted Developer',
+  eyebrow: 'Project Story',
+  description:
+    'A powerful desktop assistant built with Python that uses voice recognition, natural‑language command detection, multi‑browser web scraping, and Wikipedia search to automate everyday tasks. The assistant also includes a built-in web scraping module. Users can choose from multiple web browsers to perform automated browsing and data collection tasks',
+  intro:
+    "The <span class=\"text-primary font-mono font-bold\">Python Smart Assistant</span> is one of the most advanced personal projects I have worked on. My goal was to build more than a simple chatbot—I wanted to create a desktop assistant that could understand natural language, execute built‑in commands, interact with the web, and automate everyday tasks.",
+  whatIs:
+    'The assistant combines voice recognition, intelligent command parsing, multi‑browser web scraping, and Wikipedia search into a single desktop application. It is designed to be modular and easily extendable, allowing new features to be added as the project evolves.',
+  techStack: [
+    'Python',
+    'SpeechRecognition',
+    'Selenium',
+    'BeautifulSoup',
+    'Wikipedia API',
+    'AI Assistance',
+    'Modular Design',
+    'Automation',
+  ],
+  displaySkills: ['Python', 'Selenium', 'Voice Recognition'],
+  modules: [
+    {
+      icon: 'mic',
+      title: 'Voice Recognition',
+      text: 'Hands‑free interaction through spoken commands. The assistant converts voice to text and performs requested actions, making it more natural and accessible.',
+    },
+    {
+      icon: 'psychology',
+      title: 'Intelligent Command Detection',
+      text: 'Understands commands hidden inside long natural sentences. Users can type or speak in full sentences, and the assistant extracts the relevant keywords to trigger the correct action.',
+    },
+    {
+      icon: 'language',
+      title: 'Multi‑Browser Web Scraping',
+      text: 'Supports automated browsing and data collection across different web browsers. This flexibility adapts to various environments and simplifies online information gathering.',
+    },
+  ],
+  lessons:
+    'Developing this project taught me much more than Python programming. I gained experience in voice processing, natural language handling, browser automation, web scraping, modular software architecture, and debugging. Every new feature presented unique technical challenges that strengthened my problem‑solving skills.',
+  tips: [
+    {
+      icon: 'smart_toy',
+      title: 'Use AI as a learning partner',
+      text: 'AI‑assisted development helped me research solutions, debug faster, and experiment with new ideas—all while ensuring I understood and owned the final code.',
+    },
+    {
+      icon: 'extension',
+      title: 'Design for modularity',
+      text: 'A modular architecture made it easy to add new commands and features without rewriting the entire application.',
+    },
+    {
+      icon: 'record_voice_over',
+      title: 'Handle natural language early',
+      text: 'Investing in smart command detection made the assistant more intuitive and greatly improved user experience.',
+    },
+    {
+      icon: 'open_in_browser',
+      title: 'Automate the boring parts',
+      text: 'Web scraping and task automation features turned repetitive manual workflows into one‑click (or one‑phrase) actions, saving hours of time.',
+    },
+  ],
+  future:
+    'The Python Smart Assistant continues to grow as I explore new AI technologies and automation techniques. I plan to expand its capabilities with more intelligent commands, additional integrations, improved language understanding, and advanced automation features. My long‑term goal is to transform it into a powerful personal productivity assistant that demonstrates how AI and Python can work together to simplify everyday computing tasks.',
+ },
+  {
+  slug: 'ims-team-project',
+  title: 'Building an Institute Management System: Learning Through Teamwork',
+  date: '2025-August',
+  role: 'Project Manager & Researcher',
+  eyebrow: 'Project Story',
+  description:
+    'A collaborative full‑stack platform for managing students, teachers, courses, attendance, and daily academic operations. I led market research, project coordination, and team supervision while the app was built with React, TypeScript, and Flask. Although I was not the primary developer responsible for writing every feature. My responsibilities focused on market research and project management.',
+  intro:
+    "One of the most valuable experiences in my development journey was working on an <span class=\"text-primary font-mono font-bold\">Institute Management System (IMS)</span> with a team of fellow developers. Unlike my personal projects, this was a collaborative effort where every team member contributed to different parts of the application. Working together taught me not only technical skills but also how important communication, planning, and teamwork are in software development.",
+  whatIs:
+    'The application was designed to simplify the management of educational institutions by bringing multiple administrative tasks into a single platform. It includes features for managing students, teachers, courses, attendance, academic records, announcements, and other day‑to‑day operations. The goal was to create a system that is efficient, organized, and easy for administrators, teachers, and students to use.',
+  techStack: [
+    'React',
+    'TypeScript',
+    'Flask',
+    'Python',
+    'SQL',
+    'Git',
+    'GitHub',
+    'HTML',
+    'CSS',
+    'JavaScript',
+  ],
+  displaySkills: ['React', 'Flask', 'TypeScript'],
+  modules: [
+    {
+      icon: 'search',
+      title: 'Market Research',
+      text: 'Researched existing institute management systems to identify essential features and prioritise real‑world needs, ensuring the final product solved actual problems.',
+    },
+    {
+      icon: 'groups',
+      title: 'Project Management',
+      text: 'Organised tasks, monitored progress, and facilitated discussions to keep development on schedule and aligned with project goals.',
+    },
+    {
+      icon: 'monitor_heart',
+      title: 'Quality Supervision',
+      text: 'Reviewed completed work, identified potential issues early, and helped the team find practical solutions to maintain high quality across the application.',
+    },
+  ],
+  lessons:
+    'Working in a team introduced me to collaborative development practices such as task planning, code reviews, progress tracking, and effective communication. I learned that successful software projects rely not only on writing quality code but also on strong leadership, organisation, and the ability to work toward a shared goal. This experience strengthened my understanding of software development workflows and gave me valuable hands‑on experience in managing a real project from planning to implementation.',
+  tips: [
+    {
+      icon: 'groups',
+      title: 'Communication is key',
+      text: 'Regular, clear communication prevents misunderstandings and keeps everyone aligned. Daily stand‑ups and open discussions were vital.',
+    },
+    {
+      icon: 'event_note',
+      title: 'Plan before coding',
+      text: 'Invest time in research and task breakdown. A well‑defined plan saved us from scope creep and rework.',
+    },
+    {
+      icon: 'bug_report',
+      title: 'Identify issues early',
+      text: 'By reviewing work frequently, we caught potential problems before they escalated, reducing last‑minute firefighting.',
+    },
+    {
+      icon: 'engineering',
+      title: 'Lead with empathy',
+      text: 'Understanding each team member’s strengths and constraints helped distribute tasks effectively and maintain morale.',
+    },
+  ],
+  future:
+    'The Institute Management System represents more than just another project in my portfolio. It reflects my ability to work effectively in a team, contribute to project strategy, and support the successful delivery of a modern web application. I plan to expand the system with reporting dashboards, notification features, and role‑based access controls, while continuing to refine my project‑management and leadership skills for future collaborative software projects.',
+ },
 ];

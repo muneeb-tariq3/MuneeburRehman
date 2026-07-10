@@ -33,9 +33,12 @@ function Projects() {
                 <StatusDot tone={project.statusTone} />
                 <span className="font-mono text-[11px] text-secondary">{project.status}</span>
               </div>
-              <a className="text-primary hover:underline font-mono text-[11px] uppercase tracking-normal" href="#">
-                Read Case Study -&gt;
-              </a>
+              <Link
+                to={`/blog/${project.blogSlug}`}
+                className="text-primary hover:underline font-mono text-[11px] uppercase tracking-normal"
+              >
+                Read Case Study →
+            </Link>
             </div>
           </article>
         ))}
